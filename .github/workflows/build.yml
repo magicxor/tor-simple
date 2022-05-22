@@ -35,3 +35,4 @@ jobs:
             --build-arg VERSION=${{ steps.build_args.outputs.VERSION }} \
             --build-arg BUILD_DATE=${{ steps.build_args.outputs.BUILD_DATE }} \
             --build-arg VCS_REF=${GITHUB_SHA::8} \
+            .
