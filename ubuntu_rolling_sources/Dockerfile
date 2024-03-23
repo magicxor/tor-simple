@@ -54,9 +54,14 @@ RUN apt-get update && \
     cp obfs4proxy /usr/bin/obfs4proxy && \
     chmod +x /usr/bin/obfs4proxy && \
     # cleanup
+    go clean -modcache -cache -testcache -fuzzcache && \
+    rm -rf ~/go && \
+    rm -rf ~/.cache && \
     apt-get remove -y golang git build-essential automake libevent-dev libssl-dev zlib1g-dev && \
     apt-get autoremove -y && \
     apt-get install -y libc6 libcap2 libevent-dev liblzma5 libseccomp2 libssl3 libsystemd0 libzstd1 zlib1g adduser lsb-base && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
     rm -rf ~/git && \
     # check versions
     ubuntu_version=$(cat /etc/os-release | grep VERSION_ID | awk -F '"' '{print $2}') && \
