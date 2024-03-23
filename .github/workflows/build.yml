@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - master
+  schedule:
+    # every 1st day of every month
+    # see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron:  '0 0 1 * *'
+
 
 env:
   DOCKER_REGISTRY: magicxor
@@ -41,6 +46,7 @@ jobs:
         with:
           push: true
           context: .
+          no-cache: true
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE }}:latest
             ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE }}:${{ steps.get_build_info.outputs.PACKAGE_VERSIONS }}
