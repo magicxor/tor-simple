@@ -15,12 +15,13 @@ RUN apt-get update && \
     git fetch --tags && \
     torLatestTag=$(git describe --tags "$(git rev-list --tags --max-count=1)") && \
     # get webtunnel
-    cd ~/git/webtunnel/main/client && \
+    cd ~/git/webtunnel && \
     webtunnelCommitHash=$(git rev-parse --short HEAD) && \
     # get snowflake
-    cd ~/git/snowflake/ && \
+    cd ~/git/snowflake && \
     snowflakeCommitHash=$(git rev-parse --short HEAD) && \
     # get obfs4proxy
+    cd ~/git/obfs4 && \
     git fetch --tags && \
     obfs4LatestTag=$(git describe --tags "$(git rev-list --tags --max-count=1)") && \
     # write version info
