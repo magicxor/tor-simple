@@ -7,6 +7,10 @@ ARG VERSION
 
 RUN apt-get update && \
     apt-get install -y curl tor tor-geoipdb obfs4proxy && \
+    # cleanup
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    # check versions
     tor_version=$(apt-cache madison tor | awk '{print $3; exit}') && \
     obfs4proxy_version=$(apt-cache madison obfs4proxy | awk '{print $3; exit}') && \
     ubuntu_version=$(cat /etc/os-release | grep VERSION_ID | awk -F '"' '{print $2}') && \
