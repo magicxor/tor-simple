@@ -1,2 +1,2 @@
 # tor-simple
-tor-simple with obfs4proxy
+tor + pluggable transports
