@@ -9,7 +9,7 @@ ARG VERSION
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y golang git build-essential automake libevent-dev libssl-dev zlib1g-dev libzstd-dev liblzma-dev curl libc6 libcap2 liblzma5 libseccomp2 libssl3 libsystemd0 libzstd1 zlib1g adduser lsb-base && \
+    apt-get install -y golang git build-essential automake libevent-dev libssl-dev zlib1g-dev libzstd-dev liblzma-dev curl libc6 libcap2 liblzma5 libseccomp2 libssl3t64 libsystemd0 libzstd1 zlib1g adduser lsb-base && \
     echo go version && \
     mkdir -p ~/git && \
     cd ~/git && \
