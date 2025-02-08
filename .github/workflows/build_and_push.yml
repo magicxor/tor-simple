@@ -108,6 +108,7 @@ jobs:
   ubuntu_rolling_sources:
     name: tor from sources
     runs-on: ubuntu-latest
+    if: ${{ false }}
     steps:
       - uses: actions/checkout@v4
 
