@@ -142,6 +142,7 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE }}:${{ steps.get_build_info.outputs.PACKAGE_VERSIONS }}
           platforms: |
             linux/amd64
+            linux/arm/v7
             linux/arm64/v8
           build-args: |
             VERSION=${{ steps.get_build_info.outputs.PACKAGE_VERSIONS }}
