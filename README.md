@@ -10,7 +10,7 @@ tor + pluggable transports
 ## Volume bindings
 
 * `/var/log/tor` (contains `notices.log` file)
-* `/usr/local/etc/tor` or `/etc/tor` (contains `torrc` file)
+* `/etc/tor` (contains `torrc` file)
 * `/var/lib/tor` (tor working directory, contains `cached-certs`, `cached-descriptors`, `cached-descriptors.new`, `cached-microdesc-consensus`, `cached-microdescs`, `cached-microdescs.new`, `keys`, `lock`, `pt_state`, `state`)
 
 ## See also
