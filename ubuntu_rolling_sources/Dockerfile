@@ -23,7 +23,7 @@ RUN apt-get update && \
     torLatestTag=$(git describe --tags "$(git rev-list --tags --max-count=1)") && \
     git checkout $torLatestTag && \
     ./autogen.sh && \
-    ./configure --disable-asciidoc && \
+    ./configure --disable-asciidoc --sysconfdir=/etc && \
     make && \
     make install && \
     # build webtunnel
@@ -51,7 +51,7 @@ RUN apt-get update && \
     cp obfs4proxy /usr/bin/obfs4proxy && \
     chmod +x /usr/bin/obfs4proxy && \
     # add torrc file
-    sed "1s/^/SocksPort 0.0.0.0:9050\n/" /usr/local/etc/tor/torrc.sample > /usr/local/etc/tor/torrc && \
+    sed "1s/^/SocksPort 0.0.0.0:9050\n/" /etc/tor/torrc.sample > /etc/tor/torrc && \
     # check versions
     ubuntu_version=$(cat /etc/os-release | grep VERSION_ID | awk -F '"' '{print $2}') && \
     torLatestTag=$(echo $torLatestTag | sed 's/.*-//') && \
