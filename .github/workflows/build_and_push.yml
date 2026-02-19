@@ -108,7 +108,7 @@ jobs:
   ubuntu_rolling_sources:
     name: tor from sources
     runs-on: ubuntu-latest
-    if: ${{ false }}
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
